@@ -1,0 +1,3 @@
+[submodule "example_data"]
+	path = example_data
+	url = https://github.com/stedy/Machine-Learning-with-R-datasets.git
