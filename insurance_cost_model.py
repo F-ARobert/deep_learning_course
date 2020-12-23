@@ -8,7 +8,7 @@ from tensorflow.keras.layers import InputLayer
 from tensorflow.keras.layers import Dense
 from tensorflow.keras.optimizers import Adam
 
-tensorflow.random.set_seed(35)  # for the reproducibility of results
+tensorflow.random.set_seed(35)  # for the reproductibility of results
 
 
 def design_model(features):
@@ -26,7 +26,7 @@ def design_model(features):
     return model
 
 
-dataset = pd.read_csv('insurance.csv')  # load the dataset
+dataset = pd.read_csv('example_data/insurance.csv')  # load the dataset
 features = dataset.iloc[:, 0:6]  # choose first 7 columns as features
 labels = dataset.iloc[:, -1]  # choose the final column for prediction
 
@@ -44,7 +44,7 @@ model = design_model(features_train)
 print(model.summary())
 
 # fit the model using 40 epochs and batch size 1
-model.fit(features_train, labels_train, epochs=40, batch_size=1, verbose=1)
+model.fit(features_train, labels_train, epochs=40, batch_size=1, verbose=0)
 
 # evaluate the model on the test data
 val_mse, val_mae = model.evaluate(features_test, labels_test, verbose=0)
